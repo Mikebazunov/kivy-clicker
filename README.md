@@ -1,2 +1,1 @@
-# kivy-clicker
-=) clicker game where you click on tiles (=
+=) clicker game where you click on something (=
