@@ -1,0 +1,83 @@
+<MenuScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+        canvas.before:
+            Rectangle:
+                source: "assets/images/lanterns.jpeg"
+                size: self.size
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Menu"
+        Button:
+            text: "Game"
+            size_hint: 0.2, 0.2
+                
+            pos_hint: {"center_x": 0.25}
+            font_size: "20sp"
+            on_press: root.start_game()
+        Button:
+            text: "Shop"
+            size_hint: 0.2, 0.2
+                
+            pos_hint: {"center_x": 0.75}
+            font_size: "20sp"
+            on_press: root.go_to_shop()
+
+<GameScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+        canvas.before:
+            Rectangle:
+                source: "assets/images/wine.jpeg"
+                size: self.size
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Привет)"
+        Button:
+            text: "Menu"
+            font_size: "20sp"
+            size_hint: 0.2, 0.2
+                
+            pos_hint: {"center_x": 0.25}
+            on_press: root.go_to_menu()
+        Button:
+            text: "Shop"
+            font_size: "20sp"
+            size_hint: 0.2, 0.2
+                
+            pos_hint: {"center_x": 0.75}
+            on_press: root.go_to_shop()
+
+<ShopScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+        canvas.before:
+            Rectangle:
+                source: "assets/images/tavern.jpeg"
+                size: self.size
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Shop"        
+        Button:
+            text: "Menu"
+            font_size: "20sp"
+            size_hint: 0.2, 0.2
+                
+            pos_hint: {"center_x": 0.25}
+            on_press: root.go_to_menu()
+        Button:
+            text: "Game"
+            font_size: "20sp"
+            size_hint: 0.2, 0.2
+                
+            pos_hint: {"center_x": 0.75}
+            on_press: root.start_game()
