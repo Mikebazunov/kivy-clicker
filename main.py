@@ -28,8 +28,26 @@ class MenuScreen(Screen):
    def go_to_shop(self):
        self.manager.current = "shop"
 
+class Rock(Button):
+    # def __init__(self, **kwargs):
+    #     super().__init__(**kwargs)
+
+    def on_press(self):
+        ...
+        # print(self.parent.parent)
+        # self.parent.parent.handle_click()
+
 
 class GameScreen(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.clicks = 0
+
+    def handle_click(self):
+        self.clicks += 1
+        self.ids.clicks_count.text = f"Clicks: {self.clicks}"
+
+
     def go_to_menu(self):
         self.manager.current = "menu"
 

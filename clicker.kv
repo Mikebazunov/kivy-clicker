@@ -37,8 +37,16 @@
                 size: self.size
                 pos: self.pos
                 size: self.size
-        Label:
-            text: "Привет)"
+        BoxLayout:
+            size_hint_y: 0.1
+            Label:
+                id: clicks_count
+                text: f"Clicks: 0"
+
+        Rock:
+            on_press: root.handle_click()
+            
+
         Button:
             text: "Menu"
             font_size: "20sp"
@@ -74,6 +82,8 @@
                 
             pos_hint: {"center_x": 0.25}
             on_press: root.go_to_menu()
+        
+        
         Button:
             text: "Game"
             font_size: "20sp"
@@ -81,3 +91,10 @@
                 
             pos_hint: {"center_x": 0.75}
             on_press: root.start_game()
+
+<Rock>:
+    text: "=)"
+    font_size: "20sp"
+    size_hint: 0.2, 0.2
+                
+    pos_hint: {"center_x": 0.5, "center_y": 0.5}
